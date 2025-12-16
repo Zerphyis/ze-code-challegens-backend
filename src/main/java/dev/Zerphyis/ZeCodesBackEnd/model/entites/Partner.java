@@ -1,4 +1,7 @@
-package dev.Zerphyis.ZeCodesBackEnd.model.entites.vo;
+package dev.Zerphyis.ZeCodesBackEnd.model.entites;
+
+import dev.Zerphyis.ZeCodesBackEnd.model.entites.vo.GeoJsonMultiPolygon;
+import dev.Zerphyis.ZeCodesBackEnd.model.entites.vo.GeoJsonPoint;
 
 import java.util.Objects;
 import java.util.UUID;
