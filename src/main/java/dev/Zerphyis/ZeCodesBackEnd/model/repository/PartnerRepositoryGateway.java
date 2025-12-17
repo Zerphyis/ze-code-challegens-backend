@@ -1,15 +1,18 @@
-package dev.Zerphyis.ZeCodesBackEnd.model.repository;
+    package dev.Zerphyis.ZeCodesBackEnd.model.repository;
 
-import dev.Zerphyis.ZeCodesBackEnd.model.entites.Partner;
+    import dev.Zerphyis.ZeCodesBackEnd.model.entites.Partner;
 
-import java.util.Optional;
+    import java.util.Optional;
+    import java.util.UUID;
 
-public interface PartnerRepositoryGateway {
-    Optional<Partner> findById(String id);
+    public interface PartnerRepositoryGateway {
+        Optional<Partner> findById(UUID id);
 
-    Optional<Partner> findByDocument(String document);
+        Optional<Partner> findByDocument(String document);
 
-    Partner save(Partner partner);
+        Partner save(Partner partner);
 
-    Optional<Partner> searchNearest(Double latitude, Double longitude);
-}
+        Optional<Partner> searchNearest(Double latitude, Double longitude);
+
+        void delete(UUID id);
+    }
