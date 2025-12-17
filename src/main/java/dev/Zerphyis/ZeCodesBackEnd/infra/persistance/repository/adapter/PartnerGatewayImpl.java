@@ -35,6 +35,7 @@ public class PartnerGatewayImpl implements PartnerRepositoryGateway {
         return repositoryJpa.findByDocument(document).map(mapper::toDomain);
     }
 
+
     @Override
     public Partner save(Partner partner) {
         var saved = repositoryJpa.save(
@@ -42,6 +43,7 @@ public class PartnerGatewayImpl implements PartnerRepositoryGateway {
         );
         return mapper.toDomain(saved);
     }
+
 
     @Override
     public Optional<Partner> searchNearest(Double latitude, Double longitude) {
@@ -54,8 +56,10 @@ public class PartnerGatewayImpl implements PartnerRepositoryGateway {
                 .map(mapper::toDomain);
     }
 
+
     @Override
     public void delete(UUID id) {
         repositoryJpa.deleteById(id);
     }
+
 }
