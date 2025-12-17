@@ -13,6 +13,8 @@ public class Partner {
     private final String document;
     private final GeoJsonMultiPolygon coverageArea;
     private final GeoJsonPoint address;
+    private final boolean active;
+
 
     public Partner(
             UUID id,
@@ -20,7 +22,8 @@ public class Partner {
             String ownerName,
             String document,
             GeoJsonMultiPolygon coverageArea,
-            GeoJsonPoint address
+            GeoJsonPoint address,
+            boolean active
     ) {
         this.id = Objects.requireNonNull(id, "Id é obrigatório");
         this.tradingName = validateString(tradingName, "TradingName");
@@ -28,7 +31,9 @@ public class Partner {
         this.document = validateString(document, "Document");
         this.coverageArea = Objects.requireNonNull(coverageArea, "CoverageArea é obrigatória");
         this.address = Objects.requireNonNull(address, "Address é obrigatório");
+        this.active = active;
     }
+
 
     private String validateString(String value, String field) {
         if (value == null || value.isBlank()) {
@@ -37,27 +42,48 @@ public class Partner {
         return value;
     }
 
+
     public UUID getId() {
         return id;
     }
+
 
     public String getTradingName() {
         return tradingName;
     }
 
+
     public String getOwnerName() {
         return ownerName;
     }
+
 
     public String getDocument() {
         return document;
     }
 
+
     public GeoJsonMultiPolygon getCoverageArea() {
         return coverageArea;
     }
 
+
     public GeoJsonPoint getAddress() {
         return address;
+    }
+
+
+    public boolean isActive() {
+        return active;
+    }
+
+
+    public Partner activate() {
+        return new Partner(id, tradingName, ownerName, document, coverageArea, address, true);
+    }
+
+
+    public Partner deactivate() {
+        return new Partner(id, tradingName, ownerName, document, coverageArea, address, false);
     }
 }
