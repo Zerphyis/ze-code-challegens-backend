@@ -1,6 +1,6 @@
 package dev.Zerphyis.ZeCodesBackEnd.model.entites.vo;
 
-import dev.Zerphyis.ZeCodesBackEnd.infra.exceptions.InvalidGeoDataException;
+import dev.Zerphyis.ZeCodesBackEnd.model.exceptions.InvalidGeoDataException;
 
 import java.util.Objects;
 
