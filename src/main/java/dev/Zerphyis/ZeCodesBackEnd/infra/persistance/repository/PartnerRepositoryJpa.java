@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -12,6 +13,8 @@ import java.util.UUID;
 public interface PartnerRepositoryJpa extends JpaRepository<PartnerJpaEntity, UUID> {
 
     Optional<PartnerJpaEntity> findByDocument(String document);
+
+    List<PartnerJpaEntity> findByActive(boolean active);
 
     @Query("""
         SELECT p
