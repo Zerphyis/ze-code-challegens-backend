@@ -2,6 +2,7 @@
 
     import dev.Zerphyis.ZeCodesBackEnd.model.entites.Partner;
 
+    import java.util.List;
     import java.util.Optional;
     import java.util.UUID;
 
@@ -15,4 +16,8 @@
         Optional<Partner> searchNearest(Double latitude, Double longitude);
 
         void delete(UUID id);
+
+        List<Partner> findAll();
+
+        List<Partner> findByActive(boolean active);
     }
