@@ -9,8 +9,10 @@ import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.PrecisionModel;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class PartnerGatewayImpl implements PartnerRepositoryGateway {
    private static final int SRID =4326;
@@ -60,6 +62,21 @@ public class PartnerGatewayImpl implements PartnerRepositoryGateway {
     @Override
     public void delete(UUID id) {
         repositoryJpa.deleteById(id);
+    }
+    @Override
+    public List<Partner> findAll() {
+        return repositoryJpa.findAll()
+                .stream()
+                .map(mapper::toDomain)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Partner> findByActive(boolean active) {
+        return repositoryJpa.findByActive(active)
+                .stream()
+                .map(mapper::toDomain)
+                .collect(Collectors.toList());
     }
 
 }
