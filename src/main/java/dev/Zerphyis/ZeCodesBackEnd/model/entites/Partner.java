@@ -78,12 +78,10 @@ public class Partner {
     }
 
 
-    public Partner activate() {
-        return new Partner(id, tradingName, ownerName, document, coverageArea, address, true);
-    }
-
-
-    public Partner deactivate() {
-        return new Partner(id, tradingName, ownerName, document, coverageArea, address, false);
+    public void deactivate() {
+        if (!this.active) {
+            return;
+        }
+        this.active = false;
     }
 }
