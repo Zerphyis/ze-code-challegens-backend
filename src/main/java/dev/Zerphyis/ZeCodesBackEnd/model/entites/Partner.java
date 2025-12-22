@@ -13,7 +13,7 @@ public class Partner {
     private final String document;
     private final GeoJsonMultiPolygon coverageArea;
     private final GeoJsonPoint address;
-    private final boolean active;
+    private  boolean active;
 
 
     public Partner(
@@ -74,7 +74,7 @@ public class Partner {
 
 
     public boolean isActive() {
-        return active;
+        return  this.active=true;
     }
 
 
