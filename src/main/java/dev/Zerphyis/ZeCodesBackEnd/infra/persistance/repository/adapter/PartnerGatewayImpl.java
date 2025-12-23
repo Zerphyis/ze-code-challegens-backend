@@ -8,12 +8,15 @@ import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.PrecisionModel;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+
+@Repository
 public class PartnerGatewayImpl implements PartnerRepositoryGateway {
    private static final int SRID =4326;
     private PartnerRepositoryJpa repositoryJpa;
