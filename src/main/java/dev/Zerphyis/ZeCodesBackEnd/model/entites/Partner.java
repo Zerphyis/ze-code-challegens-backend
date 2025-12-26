@@ -74,9 +74,15 @@ public class Partner {
 
 
     public boolean isActive() {
-        return  this.active=true;
+        return active;
     }
 
+    public void activate() {
+        if (this.active) {
+            return;
+        }
+        this.active = true;
+    }
 
     public void deactivate() {
         if (!this.active) {
