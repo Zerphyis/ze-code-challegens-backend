@@ -1,7 +1,7 @@
 package dev.Zerphyis.ZeCodesBackEnd.model.exceptions;
 
-public class NoPartnerAvailableException extends RuntimeException {
-    public NoPartnerAvailableException(String message) {
-        super(message);
+public class NoPartnerAvailableException extends DomainException {
+    public NoPartnerAvailableException() {
+        super("Nenhum partner disponível para os critérios informados");
     }
 }

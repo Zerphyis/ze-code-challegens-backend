@@ -21,9 +21,7 @@ public class SearchPartnerUseCaseImpl implements SearchPartnerUseCase {
             return repositoryGateway
                     .searchNearest(latitude, longitude)
                     .orElseThrow(() ->
-                            new NoPartnerAvailableException(
-                                    "Nenhum parceiro disponível para as coordenadas informadas"
-                            )
+                            new NoPartnerAvailableException()
                     );
         }
 
