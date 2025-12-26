@@ -27,7 +27,7 @@ public class ActivePartnerUseCaseImpl implements ActivePartnerUseCase {
                         )
                 );
 
-        partner.isActive();
+        partner.activate();
 
         repositoryGateway.save(partner);
     }

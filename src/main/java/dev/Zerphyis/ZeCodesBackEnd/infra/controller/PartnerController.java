@@ -3,7 +3,7 @@ package dev.Zerphyis.ZeCodesBackEnd.infra.controller;
 import dev.Zerphyis.ZeCodesBackEnd.aplication.dtos.RequetsMapper;
 import dev.Zerphyis.ZeCodesBackEnd.aplication.dtos.PartnerRequestDto;
 import dev.Zerphyis.ZeCodesBackEnd.aplication.dtos.PartnerResponseDto;
-import dev.Zerphyis.ZeCodesBackEnd.aplication.service.interfaceService.ServicePartner;
+import dev.Zerphyis.ZeCodesBackEnd.aplication.service.PartnerServiceImpl;
 import dev.Zerphyis.ZeCodesBackEnd.model.entites.Partner;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -16,9 +16,9 @@ import java.util.List;
 @RequestMapping("/partners")
 public class PartnerController {
 
-    private final ServicePartner partnerService;
+    private final PartnerServiceImpl partnerService;
 
-    public PartnerController(ServicePartner partnerService) {
+    public PartnerController(PartnerServiceImpl partnerService) {
         this.partnerService = partnerService;
     }
 
