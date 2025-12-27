@@ -28,8 +28,7 @@ class DeactivePartnerUseCaseImplTest {
     DeactivePartnerUseCaseImpl useCase;
 
     @Test
-    void
-    happyPathdeactivatesPartner() {
+    void happyPathDeactivatesPartner() {
         Partner partner = PartnerTestFactory.activePartner();
 
         when(gateway.findById(partner.getId()))
@@ -37,9 +36,10 @@ class DeactivePartnerUseCaseImplTest {
 
         useCase.execute(partner.getId());
 
-        assertTrue(partner.isActive());
+        assertFalse(partner.isActive());
         verify(gateway).save(partner);
     }
+
 
     @Test
     void
