@@ -54,3 +54,32 @@ O projeto foi desenvolvido com foco em clareza, organização e aplicação corr
 * Controla requisições com rate limiting
 
 * Trata erros de forma consistente
+
+
+### 🧠 Decisões técnicas importantes
+
+* Adotei Clean Architecture como decisão arquitetural, pois estou estudando esse modelo atualmente e quis aplicá-lo em um cenário próximo do mundo real
+
+* Modelei dados geográficos seguindo rigorosamente o padrão GeoJSON, conforme exigido no desafio
+
+* Separei regras de negócio em use cases, reduzindo acoplamento entre domínio, aplicação e infraestrutura
+
+* Priorizei validação na entrada para evitar erros em etapas posteriores
+
+* Mantive controllers finos, focados apenas em orquestração
+
+* Preferi clareza e previsibilidade ao invés de “código inteligente”
+
+* Aceitei mais código em troca de maior legibilidade e manutenção
+
+### 🔄 Possíveis melhorias
+
+* Padronizar ainda mais o formato de erros
+
+* Aumentar a cobertura de testes, principalmente testes de integração
+
+* Refinar validações de domínio
+
+* Documentar regras de negócio mais complexas
+
+* Evoluir o rate limiter para um cenário distribuído
