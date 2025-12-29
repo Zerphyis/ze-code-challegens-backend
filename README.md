@@ -83,3 +83,73 @@ O projeto foi desenvolvido com foco em clareza, organização e aplicação corr
 * Documentar regras de negócio mais complexas
 
 * Evoluir o rate limiter para um cenário distribuído
+
+### 🛠️ Como executar
+#### Executando com Docker (recomendado)
+
+Pré-requisitos:
+
+* Docker
+* Docker Compose
+
+```
+docker-compose up --build
+````
+
+__A aplicação será iniciada automaticamente e ficará disponível em:__
+````
+http://localhost:8080
+````
+
+As configurações de banco e ambiente já estão definidas no docker-compose.yml.
+
+
+#### Executando localmente (sem Docker)
+
+Pré-requisitos:
+
+* Java 17+
+*MySQL 8 (ou outro banco relacional de sua preferência)
+* Maven
+````
+./mvnw spring-boot:run
+````
+Ou:
+````
+mvn spring-boot:run
+````
+
+A aplicação ficará disponível em:
+````
+http://localhost:8080
+````
+
+#### ⚠️ Importante
+Para que a aplicação funcione corretamente em ambiente local, é obrigatório configurar o arquivo application.properties com as credenciais e informações do banco de dados antes de executar o projeto.
+
+__Exemplo de application.properties (execução local)__
+````
+# Porta da aplicação
+server.port=8080
+
+# Configuração do banco de dados (MySQL)
+spring.datasource.url=jdbc:mysql://localhost:3306/DB_NAME?useSSL=false&serverTimezone=UTC
+spring.datasource.username=DB_USERNAME
+spring.datasource.password=DB_PASSWORD
+
+# JPA / Hibernate
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+# Jackson
+spring.jackson.serialization.indent_output=true
+
+# Rate limit
+rate.limit.requests=10
+rate.limit.duration.seconds=60
+````
+
+#### 📌 Nota
+O banco de dados informado em DB_NAME deve existir previamente no MySQL.
