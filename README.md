@@ -153,3 +153,8 @@ rate.limit.duration.seconds=60
 
 #### 📌 Nota
 O banco de dados informado em DB_NAME deve existir previamente no MySQL.
+
+### 📚 O que aprendi com esse projeto
+
+Aprendi que resolver um desafio técnico não é apenas implementar endpoints, mas entender o problema de negócio e seus formatos de dados.
+Trabalhar com GeoJSON e aplicar Clean Architecture reforçou a importância de separação de responsabilidades, validações corretas e previsibilidade para manter o sistema evolutivo e sustentável.
